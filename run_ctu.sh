@@ -13,7 +13,7 @@ for ctu in 64 32 16
 do
     for cu in 8 16 32
     do
-        for depth in 0 1 2 3 4
+        for depth in 1 2 3 4
         do
                 echo "ALI_CTU_${array[$i]} , $ctu , $cu , $depth"  >> $output_ctu
                 for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing

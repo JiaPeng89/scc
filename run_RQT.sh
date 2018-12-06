@@ -11,9 +11,9 @@ dir=RQT
 mkdir ${dir}
 for cu in 32 64
 do
-    for depth in 0 1 2
+    for depth in 1 2 3
     do
-        for QuadtreeTUMaxDepthIntra in 4 3 2 1 0
+        for QuadtreeTUMaxDepthIntra in 4 3 2 1 
         do
                 echo "ALI_RQT_${array[$i]} , $cu , $depth , $QuadtreeTUMaxDepthIntra , $QuadtreeTUMaxDepthIntra"  >> $output_RQT
                 for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
