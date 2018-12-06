@@ -3,6 +3,7 @@
 output_merge="merge.csv"
 echo "FILE,TMVPMode,MaxNumMergeCand" > $output_merge
 array=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+jarray=(ai ra lb lp)
 #sequence=(SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing)
 i=0
 f=30
@@ -15,28 +16,15 @@ do
 		echo "ALI_MERGE_${array[$i]} , $TMVPMode ,  $MaxNumMergeCand"  >> $output_merge
 		for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 		do
-			./TAppEncoderStatic -c encoder_randomaccess_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_MERGE_ra_${s}_${array[$i]}_0.bin
-			./TAppEncoderStatic -c encoder_randomaccess_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_MERGE_ra_${s}_${array[$i]}_1.bin
-			./TAppEncoderStatic -c encoder_randomaccess_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_MERGE_ra_${s}_${array[$i]}_2.bin
-			./TAppEncoderStatic -c encoder_randomaccess_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_MERGE_ra_${s}_${array[$i]}_3.bin
-
-
-			./TAppEncoderStatic -c encoder_lowdelay_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_MERGE_lb_${s}_${array[$i]}_0.bin
-			./TAppEncoderStatic -c encoder_lowdelay_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_MERGE_lb_${s}_${array[$i]}_1.bin
-			./TAppEncoderStatic -c encoder_lowdelay_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_MERGE_lb_${s}_${array[$i]}_2.bin
-			./TAppEncoderStatic -c encoder_lowdelay_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_MERGE_lb_${s}_${array[$i]}_3.bin
-
-
-			./TAppEncoderStatic -c encoder_lowdelayp_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_MERGE_lp_${s}_${array[$i]}_0.bin
-			./TAppEncoderStatic -c encoder_lowdelayp_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_MERGE_lp_${s}_${array[$i]}_1.bin
-			./TAppEncoderStatic -c encoder_lowdelayp_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_MERGE_lp_${s}_${array[$i]}_2.bin
-			./TAppEncoderStatic -c encoder_lowdelayp_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_MERGE_lp_${s}_${array[$i]}_3.bin
-
-
-			./TAppEncoderStatic -c encoder_intra_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_MERGE_ai_${s}_${array[$i]}_0.bin
-			./TAppEncoderStatic -c encoder_intra_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_MERGE_ai_${s}_${array[$i]}_1.bin
-			./TAppEncoderStatic -c encoder_intra_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_MERGE_ai_${s}_${array[$i]}_2.bin
-			./TAppEncoderStatic -c encoder_intra_main_scc.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_MERGE_ai_${s}_${array[$i]}_3.bin
+			j=0
+			for cfg in encoder_intra_main_scc
+			do
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_MERGE_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_MERGE_ai_${jarray[$j]}_${s}_${array[$i]}_1.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_MERGE_ai_${jarray[$j]}_${s}_${array[$i]}_2.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --TMVPMode=$TMVPMode --MaxNumMergeCand=$MaxNumMergeCand --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_MERGE_ai_${jarray[$j]}_${s}_${array[$i]}_3.bin
+			j=`expr $j + 1`
+			done
 		done
 		i=`expr $i + 1`
 	done
