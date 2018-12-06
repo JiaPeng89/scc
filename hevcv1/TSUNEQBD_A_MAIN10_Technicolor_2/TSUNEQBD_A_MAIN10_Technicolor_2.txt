@@ -1,0 +1,19 @@
+conformance: HM-11.0 Main 10 profile, Level 5.1
+resolution: 1024x768
+chroma sampling: 4:2:0
+framerate: 30Hz
+luma bitdepth: 10
+chroma bitdepth: 9
+# of frames: 8
+
+purpose: Check Transform Skip intra and inter with unequal bitdepth (luma: 10-bit, chroma: 9-bit)
+syntax elements:
+	-In PPS, transform_skip_enabled_flag set to 1
+	-In Transform Unit (residual_coding()), transform_skip_flag set to 1 for Y, Cb, Cr for both intra and inter prediction modes.
+
+files in zip:
+-TSUNEQBD_A_MAIN10_Technicolor_2.bit: bitstream file
+-TSUNEQBD_A_MAIN10_Technicolor_2.md5: MD5 of bitstream file
+-TSUNEQBD_A_MAIN10_Technicolor_2.trc: Trace of decoded bitstream
+-TSUNEQBD_A_MAIN10_Technicolor_2.txt: This description file
+-TSUNEQBD_A_MAIN10_Technicolor_2_yuv.md5: MD5 file of the complete decoded yuv file
