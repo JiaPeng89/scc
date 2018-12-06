@@ -19,7 +19,7 @@ do
                 for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
                 do
                     j=0
-                    #encoder_randomaccess_main_scc encoder_lowdelay_main_scc encoder_lowdelayp_main_scc
+                    #encoder_randomaccess_main_scc encoder_lowdelay_main_scc encoder_intra_main_scc
                     for cfg in encoder_intra_main_scc
                     do
                         ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --MaxCUWidth=$ctu --MaxCUHeight=$ctu --MaxCUSize=$cu --MaxPartitionDepth=$depth --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_CTU_${jarray[$j]}_${s}_${array[$i]}_0.bin
