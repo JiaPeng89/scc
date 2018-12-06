@@ -11,17 +11,17 @@ dir=sbh
 mkdir ${dir}
 for SignHideFlag in 1
 do
-		echo "ALI_PMERGE_${array[$i]} , $SignHideFlag "  >> $output_sbh
+		echo "ALI_SBH_${array[$i]} , $SignHideFlag "  >> $output_sbh
 		for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 		do
             j=0
             #encoder_randomaccess_main_scc encoder_lowdelay_main_scc encoder_lowdelayp_main_scc
             for cfg in encoder_intra_main_scc
             do
-                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_PMERGE_${jarray[$j]}_${s}_${array[$i]}_0.bin
-                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_PMERGE_${jarray[$j]}_${s}_${array[$i]}_1.bin
-                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_PMERGE_${jarray[$j]}_${s}_${array[$i]}_2.bin
-                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_PMERGE_${jarray[$j]}_${s}_${array[$i]}_3.bin
+                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_SBH_${jarray[$j]}_${s}_${array[$i]}_0.bin
+                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_SBH_${jarray[$j]}_${s}_${array[$i]}_1.bin
+                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_SBH_${jarray[$j]}_${s}_${array[$i]}_2.bin
+                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --SignHideFlag=$SignHideFlag --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_SBH_${jarray[$j]}_${s}_${array[$i]}_3.bin
 
                 j=`expr $j + 1`
             done
