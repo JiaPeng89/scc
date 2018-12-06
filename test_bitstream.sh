@@ -26,7 +26,7 @@ echo $LIBHEVC
         i=`expr $i + 1`
     done
 
-    for bin in `ls $dir/*_0.bin`
+    for bin in `ls $dir/*_1.bin`
     do
         echo "$i: $bin" >> $log
         ./TAppDecoder -b $bin -o out.yuv
