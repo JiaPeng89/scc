@@ -16,7 +16,7 @@ do
         for OffsetInPPS in 0 1
         do
 		DeblockingFilterMetric=1-$OffsetInPPS
-                echo "ALI_deblock_${array[$i]} , $BetaOffset , $TcOffset , $OffsetInPPS , $DeblockingFilterMetric"  >> $output_deblock
+                echo "ALI_DEBLOCK_${array[$i]} , $BetaOffset , $TcOffset , $OffsetInPPS , $DeblockingFilterMetric"  >> $output_deblock
                 for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
                 do
                     j=0
