@@ -1,6 +1,6 @@
 #!/bin/bash
 output_sao="sao.csv"
-echo "FILE,SaoLumaOffsetBitShift,SaoChromaOffsetBitShift,SAO,SaoEncodingRate,SaoEncodingRateChroma,MaxNumOffsetsPerPic,SAOLcuBoundary,SAOResetEncoderStateAfterIRAP">$output_sao
+echo "FILE,SAO,SaoEncodingRate,SaoEncodingRateChroma,MaxNumOffsetsPerPic,SAOLcuBoundary">$output_sao
 array=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AB AC AD AE AF AG AH AI AJ AK AL AM )
 jarray=(ai ra lb lp)
 #sequence=(SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing)
