@@ -9,7 +9,7 @@ i=0
 f=30
 dir=sao
 mkdir ${dir}
-if SAO== 1 ;then
+if [$SAO== 1] ;then
 	for SaoEncodingRate in -1 0 0.75
 	do 
 		for SaoEncodingRateChroma in -1 0 0.5
