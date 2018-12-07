@@ -1,21 +1,21 @@
 #!/bin/bash
 
-output_wppslice="wppslice.csv"
-echo "FILE;WaveFrontSynchro;SliceArgument;SliceMode" > $output_wppslice
+output_wppslice_1080p="wppslice_1080p.csv"
+echo "FILE;WaveFrontSynchro;SliceArgument;SliceMode" > $output_wppslice_1080p
 array=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ AK AL AM AN AO AP AQ AR AS AT AU AV AW AX AY AZ BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY BZ CA CB CC CD CE CF CG CH CI CJ CK CL CM CN CO CP CQ CR CS CT CU CV CW CX CY CZ DA DB DC DD DE DF DG DH DI DJ DK DL DM DN DO DP DQ DR DS DT DU DV DW DX DY DZ)
 jarray=(ai ra lb lp)
 #sequence=(SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing)
 
 i=0
 f=30
-dir=wppslice
+dir=wppslice_1080p
 mkdir ${dir}
 
 for SliceArgument in 60 90
 do
 	for WaveFrontSynchro in 0 1
 	do 
-   		echo "ALI_WAVEFRONT_${array[$i]},$WaveFrontSynchro,$SliceArgument,1">>$output_wppslice
+   		echo "ALI_WAVEFRONT_${array[$i]},$WaveFrontSynchro,$SliceArgument,1">>$output_wppslice_1080p
    		for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 	   	do
 	      		j=0
