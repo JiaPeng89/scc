@@ -20,7 +20,7 @@ do
 			do
 				for NumTileRowsMinus1 in 0 1 2 3
 				do 
-					echo "ALI_TILE_${array[$i]} , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , default , default , $LFCrossTileBoundaryFlag"  >> $output_tile
+					echo "ALI_TILE_${array[$i]} , $TileUniformSpacing , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , default , default , $LFCrossTileBoundaryFlag"  >> $output_tile
 					for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 					do
 						j=0
@@ -42,7 +42,7 @@ do
 			do
 				for NumTileRowsMinus1 in 1 2 3
 				do 
-					echo "ALI_TILE_${array[$i]} , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , ${TileColumnWidthArray[@]:0:$NumTileColumnsMinus1} , ${TileRowHeightArray[@]:0:$NumTileRowsMinus1} , $LFCrossTileBoundaryFlag"  >> $output_tile
+					echo "ALI_TILE_${array[$i]} , $TileUniformSpacing , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , ${TileColumnWidthArray[@]:0:$NumTileColumnsMinus1} , ${TileRowHeightArray[@]:0:$NumTileRowsMinus1} , $LFCrossTileBoundaryFlag"  >> $output_tile
 					for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 					do
 						j=0
