@@ -30,7 +30,7 @@ do
 							./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f  --LFCrossTileBoundaryFlag=$LFCrossTileBoundaryFlag --TileUniformSpacing=$TileUniformSpacing --NumTileColumnsMinus1=$NumTileColumnsMinus1 --NumTileRowsMinus1=$NumTileRowsMinus1 --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_TILE_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
 							./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f  --LFCrossTileBoundaryFlag=$LFCrossTileBoundaryFlag --TileUniformSpacing=$TileUniformSpacing --NumTileColumnsMinus1=$NumTileColumnsMinus1 --NumTileRowsMinus1=$NumTileRowsMinus1 --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_TILE_ai_${jarray[$j]}_${s}_${array[$i]}_1.bin
 							./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f  --LFCrossTileBoundaryFlag=$LFCrossTileBoundaryFlag --TileUniformSpacing=$TileUniformSpacing --NumTileColumnsMinus1=$NumTileColumnsMinus1 --NumTileRowsMinus1=$NumTileRowsMinus1 --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_TILE_ai_${jarray[$j]}_${s}_${array[$i]}_2.bin
-							./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f  --LFCrossTileBoundaryFlag=$LFCrossTileBoundaryFlag --TileUniformSpacing=$TileUniformSpacing --NumTileColumnsMinus1=$NumTileColumnsMinus1 --NumTileRowsMinus1=$NumTileRowsMinus1 --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_TILE_ai_${jarray[$j]}_${s}_${array[$i]}_3.bin
+							./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f  --LFCrossTileBoundaryFlag=$LFCrossTileBoundaryFlag --TileUniformSpacing=$TileUniformSpacing --NumTileColumnsMinus1=$NumTileColumnsMinus1 --NumTileRowsMinus1=$NumTileRowsMinus1  --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_TILE_ai_${jarray[$j]}_${s}_${array[$i]}_3.bin
 						j=`expr $j + 1`
 						done
 					done
@@ -42,7 +42,7 @@ do
 			do
 				for NumTileRowsMinus1 in 1 2 3
 				do 
-					echo "ALI_TILE_${array[$i]} , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , ${TileColumnWidthArray[$NumTileColumnsMinus1]} , ${TileRowHeightArray[$NumTileRowsMinus1]} , $LFCrossTileBoundaryFlag"  >> $output_tile
+					echo "ALI_TILE_${array[$i]} , $NumTileColumnsMinus1 , $NumTileRowsMinus1 , ${TileColumnWidthArray[@]:0:$NumTileColumnsMinus1} , ${TileRowHeightArray[@]:0:$NumTileRowsMinus1} , $LFCrossTileBoundaryFlag"  >> $output_tile
 					for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 					do
 						j=0
