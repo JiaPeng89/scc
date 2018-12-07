@@ -6,7 +6,7 @@ jarray=(ai ra lb lp)
 #sequence=(SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing)
 i=0
 f=30
-dir=merge
+dir=waveFront
 mkdir ${dir}
 for WaveFrontSynchro in 0 1
 do 
