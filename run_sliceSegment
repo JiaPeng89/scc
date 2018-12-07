@@ -1,7 +1,7 @@
 #!/bin/bash
 output_sliceSegment="sliceSegment.csv"
 echo "FILE,SliceMode,SliceArgument,SliceSegmentMode,SliceSegmentArgument,LFCrossSliceBoundaryFlag">$output_sliceSegment
-array=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+array=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AB AC AD AE AF AG)
 jarray=(ai ra lb lp)
 #sequence=(SlideShow Console Desktop FlyingGraphics Map Programing Robot WebBrowsing WordEditing)
 SliceArgument=(0 20 1000 4)
