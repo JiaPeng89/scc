@@ -1,0 +1,4 @@
+FILE;WaveFrontSynchro;SliceArgument;SliceMode
+ALI_WAVEFRONT_A,0,60,1
+ALI_WAVEFRONT_B,1,60,1
+ALI_WAVEFRONT_C,0,90,1
