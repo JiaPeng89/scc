@@ -8,18 +8,18 @@ i=0
 f=30
 dir=waveFront
 mkdir ${dir}
-for WaveFrontSynchro in 0 1
+for WaveFrontSynchro in  1
 do 
    echo "ALI_WAVEFRONT_${array[$i]},$WaveFrontSynchro">>$output_waveFront
-   for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
+   for s in SlideShow Console Desktop FlyingGraphics Map Programming WebBrowsing 
    do
       j=0
 	  for cfg in encoder_intra_main_scc
 	  do
-	     ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_WAVEFRONT_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
-		 ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_WAVEFRONT_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
-		 ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_WAVEFRONT_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
-		 ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_WAVEFRONT_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
+	     	./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_WAVEFRONT_${jarray[$j]}_${s}_${array[$i]}_0.bin
+		./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_WAVEFRONT_${jarray[$j]}_${s}_${array[$i]}_1.bin
+		./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_WAVEFRONT_${jarray[$j]}_${s}_${array[$i]}_2.bin
+		./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --WaveFrontSynchro=$WaveFrontSynchro --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_WAVEFRONT_${jarray[$j]}_${s}_${array[$i]}_3.bin
 	   j=`expr $j+1`
        done
     done

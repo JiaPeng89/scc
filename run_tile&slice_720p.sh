@@ -11,11 +11,11 @@ f=30
 dir=tileslice_720p
 mkdir ${dir}
 #slice include tile
-for SliceArgument in 2 3 4
+for SliceArgument in 1 2 3 4
 do
-	for NumTileColumnsMinus1 in 1 2 3
+	for NumTileColumnsMinus1 in 1 2
 	do
-		for NumTileRowsMinus1 in 1 2 3
+		for NumTileRowsMinus1 in 1 2
 		do 
 			echo "ALI_TILE_${array[$i]} ; 1 ; $NumTileColumnsMinus1 ; $NumTileRowsMinus1 ; 3 ;$SliceArgument"  >> $output_tileslice_720p
 			for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
@@ -36,16 +36,16 @@ do
 	done
 done
 #tile include slice 
-for SliceArgument in 1 5 10
+for SliceArgument in 1  10
 do
-	for NumTileColumnsMinus1 in 0 1
+	for NumTileColumnsMinus1 in  1 0
 	do
-		for NumTileRowsMinus1 in 0 1
+		for NumTileRowsMinus1 in  1 0
 		do 
 			echo "ALI_TILE_${array[$i]} ; 1 ; $NumTileColumnsMinus1 ; $NumTileRowsMinus1 ; 1 ;$SliceArgument"  >> $output_tileslice_720p
 			for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
 			do
-				j=0
+				j=20
 				#encoder_randomaccess_main_scc encoder_lowdelay_main_scc encoder_lowdelayp_main_scc
 				for cfg in encoder_intra_main_scc
 				do

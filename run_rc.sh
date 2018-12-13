@@ -11,7 +11,7 @@ dir=ratecontrol
 mkdir ${dir}
 for LCULevelRateControl in 0 1
 do
-	for TargetBitrate in 50 500 1000 5000 10000 20000
+	for TargetBitrate in 50000 500000 1000000 5000000 10000000 20000000
 	do
 		echo "ALI_ratecontrol_${array[$i]} , $LCULevelRateControl ,  $TargetBitrate"  >> $output_ratecontrol
 		for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
@@ -19,10 +19,10 @@ do
 			j=0
 			for cfg in encoder_intra_main_scc
 			do
-				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
-				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_1.bin
-				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_2.bin
-				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_3.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --RateControl=1 --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_0.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --RateControl=1 --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_1.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --RateControl=1 --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_2.bin
+				./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --RateControl=1 --LCULevelRateControl=$LCULevelRateControl --TargetBitrate=$TargetBitrate --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_ratecontrol_ai_${jarray[$j]}_${s}_${array[$i]}_3.bin
 			j=`expr $j + 1`
 			done
 		done

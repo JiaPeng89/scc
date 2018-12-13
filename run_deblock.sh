@@ -19,16 +19,16 @@ do
 		do
 			DeblockingFilterMetric=1-$OffsetInPPS
 		        echo "ALI_DEBLOCK_${array[$i]} , $Qp , $BetaOffset , $TcOffset , $OffsetInPPS , $DeblockingFilterMetric"  >> $output_deblock
-		        for s in SlideShow Console Desktop FlyingGraphics Map Programming Robot WebBrowsing WordEditing
+		        for s in SlideShow Console Desktop Map Programming
 		        do
 		            j=0
 		            #encoder_randomaccess_main_scc encoder_lowdelay_main_scc encoder_lowdelayp_main_scc
 		            for cfg in encoder_intra_main_scc
 		            do
-		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset=$BetaOffset --LoopFilterTcOffset=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_0.bin
-		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset=$BetaOffset --LoopFilterTcOffset=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_1.bin
-		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset=$BetaOffset --LoopFilterTcOffset=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_2.bin
-		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset=$BetaOffset --LoopFilterTcOffset=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_3.bin
+		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset_div2=$BetaOffset --LoopFilterTcOffset_div2=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=0 --PaletteMode=0 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_0.bin
+		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset_div2=$BetaOffset --LoopFilterTcOffset_div2=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=1 --PaletteMode=0 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_1.bin
+		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset_div2=$BetaOffset --LoopFilterTcOffset_div2=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=0 --PaletteMode=1 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_2.bin
+		                ./TAppEncoderStatic -c $cfg.cfg -c persequence/${s}_444.cfg --FramesToBeEncoded=$f --QP=$Qp --LoopFilterBetaOffset_div2=$BetaOffset --LoopFilterTcOffset_div2=$TcOffset --LoopFilterOffsetInPPS=$OffsetInPPS --DeblockingFilterMetric=$DeblockingFilterMetric --IntraBlockCopyEnabled=1 --PaletteMode=1 -b ${dir}/ALI_DEBLOCK_${jarray[$j]}_${s}_${array[$i]}_3.bin
 
 		                j=`expr $j + 1`
 		            done
