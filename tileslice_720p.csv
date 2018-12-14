@@ -1,0 +1,12 @@
+FILE;TileUniformSpacing;NumTileColumnsMinus1;NumTileRowsMinus1;SliceMode;SliceArgument
+ALI_TILE_A ; 1 ; 1 ; 1 ; 3 ;1
+ALI_TILE_B ; 1 ; 1 ; 2 ; 3 ;1
+ALI_TILE_C ; 1 ; 2 ; 1 ; 3 ;1
+ALI_TILE_D ; 1 ; 2 ; 2 ; 3 ;1
+ALI_TILE_E ; 1 ; 1 ; 1 ; 3 ;2
+ALI_TILE_F ; 1 ; 1 ; 2 ; 3 ;2
+ALI_TILE_G ; 1 ; 2 ; 1 ; 3 ;2
+ALI_TILE_H ; 1 ; 2 ; 2 ; 3 ;2
+ALI_TILE_I ; 1 ; 1 ; 1 ; 3 ;3
+ALI_TILE_J ; 1 ; 1 ; 2 ; 3 ;3
+ALI_TILE_K ; 1 ; 2 ; 1 ; 3 ;3

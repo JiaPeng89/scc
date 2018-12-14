@@ -1,0 +1,13 @@
+FILE,LCULevelRateControl,TargetBitrate
+ALI_ratecontrol_A , 0 ,  50000
+ALI_ratecontrol_B , 0 ,  500000
+ALI_ratecontrol_C , 0 ,  1000000
+ALI_ratecontrol_D , 0 ,  5000000
+ALI_ratecontrol_E , 0 ,  10000000
+ALI_ratecontrol_F , 0 ,  20000000
+ALI_ratecontrol_G , 1 ,  50000
+ALI_ratecontrol_H , 1 ,  500000
+ALI_ratecontrol_I , 1 ,  1000000
+ALI_ratecontrol_J , 1 ,  5000000
+ALI_ratecontrol_K , 1 ,  10000000
+ALI_ratecontrol_L , 1 ,  20000000
