@@ -1,0 +1,12 @@
+FILE;SAO,TestSAODisableAtPictureLevel,SAO,TileUniformSpacing;NumTileColumnsMinus1;NumTileRowsMinus1;TileColumnWidthArray;TileRowHeightArray;LFCrossTileBoundaryFlag
+ALI_TILE_A ; 0 ; 1 ; 1 ; 8 ; 8 ; 0
+ALI_TILE_B ; 0 ; 1 ; 2 ; 8 ; 8 8,2 ; 0
+ALI_TILE_C ; 0 ; 2 ; 1 ; 8 8,4 ; 8 ; 0
+ALI_TILE_D ; 0 ; 2 ; 2 ; 8 8,4 ; 8 8,2 ; 0
+ALI_TILE_E ; 0 ; 1 ; 1 ; 8 ; 8 ; 1
+ALI_TILE_F ; 0 ; 1 ; 2 ; 8 ; 8 8,2 ; 1
+ALI_TILE_G ; 0 ; 2 ; 1 ; 8 8,4 ; 8 ; 1
+ALI_TILE_H ; 0 ; 2 ; 2 ; 8 8,4 ; 8 8,2 ; 1
+ALI_TILE_I ; 1 ; 1 ; 1 ; default ; default ; 0
+ALI_TILE_J ; 1 ; 1 ; 2 ; default ; default ; 0
+ALI_TILE_K ; 1 ; 2 ; 1 ; default ; default ; 0
